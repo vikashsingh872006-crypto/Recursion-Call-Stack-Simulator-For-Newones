@@ -77,5 +77,8 @@ const qs=[['What tells recursion when to stop?',['The base case','A bigger numbe
 let qi=0,score=0;function quiz(){let q=qs[qi];$('question').textContent=qi<qs.length?`${qi+1}. ${q[0]}`:`You got ${score} out of ${qs.length}! ${score===3?'🌟 Amazing work!':'🌱 Keep practising — you are growing your coding brain!'}`;$('answers').innerHTML=qi<qs.length?q[1].map((a,i)=>`<button class="answer" data-i="${i}">${a}</button>`).join(''):'<button class="btn" id="again">Try again ↻</button>';$('feedback').textContent='';$('nextQ').style.display='none';if(qi<qs.length){document.querySelectorAll('.answer').forEach(b=>b.onclick=()=>{let i=+b.dataset.i;document.querySelectorAll('.answer').forEach((z,j)=>{z.disabled=true;if(j===q[2])z.classList.add('good');else if(j===i)z.classList.add('bad')});if(i===q[2])score++;$('feedback').textContent=q[3];$('nextQ').style.display='inline-block'})}else $('again').onclick=()=>{qi=0;score=0;quiz()}}
 $('nextQ').onclick=()=>{qi++;quiz()};quiz();
 addEventListener('resize',()=>{drawTree(cursor);heroDraw()});build();
+
+ // Vikash Kumar Singh
+ // Roll Number :- 26M&C18
 </script>
 </body></html>
